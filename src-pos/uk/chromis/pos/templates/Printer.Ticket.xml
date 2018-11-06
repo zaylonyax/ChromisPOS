@@ -30,10 +30,10 @@
 	<image>Printer.Ticket.Logo</image>
 	<line></line>
 
-	<line><text align="center" length="42">Chromis POS</text></line>
-	<line><text align="center" length="42">The New Face of Open source POS</text></line>
-	<line><text align="center" length="42">Copyright (c) (c) 2015-2016Chromis</text></line>
-	<line><text align="center" length="42">Printer.Ticket</text></line>
+	<line><text align="center" length="42" bold="true">Chromis POS</text></line>
+	<line><text align="center" length="42" bold="true">The New Face of Open source POS</text></line>
+	<line><text align="center" length="42" bold="true">Copyright (c) (c) 2015-2016Chromis</text></line>
+	<line><text align="center" length="42" bold="true">Printer.Ticket</text></line>
 	<line></line>
 
 	#if (${ticket.ticketType} == "NORMAL")
@@ -62,19 +62,19 @@
         
 		<line><text align="left" length="15">Served by:</text><text>${ticket.printUser()}</text></line>
 		<line></line>
-		<line><text align ="left" length="17">Item</text><text align ="right" length="8">Price</text><text align ="right" length="7">Qty</text><text align ="right" length="10">Value</text></line>
+		<line><text align ="left" length="17" bold="true">Item</text><text align ="right" length="8" bold="true">Price</text><text align ="right" length="7" bold="true" >Qty</text><text align ="right" length="10"bold="true">Value</text></line>
 		<line><text align="left" length="42">------------------------------------------</text></line>
 #foreach ($ticketline in $ticket.getLines())
 	<line>
 	
 	#if ($ticketline.isProductCom())
-		<text align ="left" length="17">*${ticketline.printName()}</text>
+		<text align ="left" length="17" bold="true">*${ticketline.printName()}</text>
 	#else
-		<text align ="left" length="17">${ticketline.printName()}</text>
+		<text align ="left" length="17" bold="true">${ticketline.printName()}</text>
 	#end
-		<text align ="right" length="8">${ticketline.printPriceTax()}</text>
-		<text align ="right" length="7">x${ticketline.printMultiply()}</text>
-		<text align ="right" length="10">${ticketline.printValue()}</text>
+		<text align ="right" length="8" bold="true">${ticketline.printPriceTax()}</text>
+		<text align ="right" length="7" bold="true">x${ticketline.printMultiply()}</text>
+		<text align ="right" length="10" bold="true">${ticketline.printValue()}</text>
 	</line>
 
 	#if ($ticketline.productAttSetInstId)
